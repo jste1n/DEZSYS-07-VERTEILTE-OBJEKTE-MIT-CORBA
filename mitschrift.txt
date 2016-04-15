@@ -1,0 +1,140 @@
+download binary
+wget http://downloads.sourceforge.net/project/omniorb/omniORB/omniORB-4.2.1/omniORB-4.2.1-2.tar.bz2?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fomniorb%2Ffiles%2FomniORB%2FomniORB-4.2.1%2F&ts=1460116058&use_mirror=liquidtelecom
+mv umbenennen
+bunzip2 omni
+tar -xf omnio
+
+wget http://www.jacorb.org/releases/3.7/jacorb-3.7-binary.zip
+wget http://www.jacorb.org/releases/3.7/jacorb-3.7-binary.zip.md5
+jacorb..MD5
+md5sum jacorb.zip	//vergleichen
+apt-get install unzip
+unzip jacob
+
+omniorb readme lesen
+  cd $OMNIORB_TOP
+  $ mkdir build
+  $ cd build
+  $ ../configure [configure options]
+  // geht noch nicht
+  $ make
+  $ make install		//setzt die path variable
+
+apt-get update
+sudo apt-get install gcc make autoconf automake gcc-multilib
+ apt-get install pkg-config g++ libpython2.7-dev ant
+ install openjdk-8-jdk
+
+
+omniorb und jacob umbenennen ohne version
+~/opt/
+
+
+///////////////////////////////////////////
+CLIENT
+
+root@debian:/home/jstone/code-examples-master/corba/halloWelt/client# nano build.xml
+	ändern
+	<property name="jacorb.dir" value="/home/jstone/opt/jacorb" />
+	ant compile
+	ant run-client
+
+
+///////////////////////////////////
+SERVER
+
+root@debian:/home/jstone/code-examples-master/corba/halloWelt/server# nano Makefile
+	hinzufügen:
+	
+	LD_LIBRARY_PATH = $(OMNI_HOME)/lib
+	OMNI_HOME       = /home/jstone/opt/omniORB/build
+	make
+	//make server
+	make run
+	siehe foto
+
+	
+///////////////////////
+namesservice
+	sudo mkdir /var/omninames
+	sudo omniNames -start -always
+
+	als root:
+		export LD_LIBRARY_PATH="/home/jstone/opt/omniORB/lib"
+
+	sudo nano /root/.bashrc
+		if [ -d $HOME/opt/omniORB/lib ]; then
+			export LD_LIBRARY_PATH="/home/jstone/opt/omniORB/lib"
+		fi
+
+	
+
+jacorb:
+
+readme
+ls lib
+ls bin
+
+
+
+
+
+
+echo.idl
+code-example/corba/halloWelt/client/ .xml
+
+//ant file ist ein xml; ant abhängig von idl
+
+ant clean
+ant compile
+
+cd jacob/demo /hello/ src/main/java/org/
+
+
+myecho objekt von unserer klasse, definition von ibl, definiertes distributed object
+
+active_object 
+_narrow(object) = bind
+
+
+
+
+
+
+
+
+
+cd code-example/corba/halloWelt/client/$ ant run-client
+code-example/corba/halloWelt/client/ ant run-client
+
+
+
+
+~/opt/omni und jacob
+
+mv build /opt/omni
+
+	
+if [ -d $HOME/opt/omniORB/lib ]; then
+	export LD_LIBRARY_PATH="$HOME/opt/omniORB/lib"
+	
+	
+~/opt/omniORB/bin$ sudo ./omniORB
+
+env | grep opt
+
+sudo LD_LIBRARY_PATH=/home/jstone/opt/omniORB/lib
+
+
+
+
+sudo mkdir /var/omninames
+
+
+
+
+
+
+
+
+
